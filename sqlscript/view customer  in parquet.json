@@ -2,7 +2,7 @@
 	"name": "view customer  in parquet",
 	"properties": {
 		"content": {
-			"query": "CREATE VIEW vw_customer_pq AS\nSELECT *\nFROM\n    OPENROWSET(\n        BULK 'https://adlsgen2frank.dfs.core.windows.net/adls2container/data/customer.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n",
+			"query": "CREATE VIEW vw_customer_pq AS\nSELECT *\nFROM\n    OPENROWSET(\n        BULK 'https://adlsgen2frank.dfs.core.windows.net/adls2container/data/customer.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n;\n\nSELECT * FROM vw_customer_pq;",
 			"metadata": {
 				"language": "sql"
 			},
