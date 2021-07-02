@@ -1,6 +1,7 @@
 {
-	"name": "Notebook 1",
+	"name": "Test",
 	"properties": {
+		"description": "Run a few tests for the asa course",
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
@@ -48,18 +49,17 @@
 		"cells": [
 			{
 				"cell_type": "code",
-				"metadata": {
-					"microsoft": {
-						"language": "python"
-					}
-				},
 				"source": [
-					"%%pyspark\n",
-					"df = spark.read.sqlanalytics(\"asadedicated.asacourse.customers\") \n",
-					"display(df)\n",
-					""
+					"from azureml.opendatasets import NycTlcYellow\n",
+					"from dateutil import parser\n",
+					"from datetime import datetime\n",
+					"\n",
+					"end_date = parser.parse('2018-06-06')\n",
+					"start_date = parser.parse('2018-05-01')\n",
+					"nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)\n",
+					"filtered_df = nyc_tlc.to_spark_dataframe()"
 				],
-				"execution_count": 1
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -73,10 +73,14 @@
 							"deleting": false
 						}
 					},
+					"microsoft": {
+						"language": "python"
+					},
 					"collapsed": true
 				},
 				"source": [
-					"df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")"
+					"%%pyspark\r\n",
+					" spark.sql(\"CREATE DATABASE IF NOT EXISTS NycTlcTutorial\")"
 				],
 				"execution_count": null
 			}
