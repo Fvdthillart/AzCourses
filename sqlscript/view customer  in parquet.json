@@ -8,7 +8,7 @@
 			},
 			"currentConnection": {
 				"poolName": "Built-in",
-				"databaseName": "master"
+				"databaseName": "asa-serverless"
 			},
 			"resultLimit": 5000
 		},
