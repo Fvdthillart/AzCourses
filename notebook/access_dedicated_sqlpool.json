@@ -57,7 +57,7 @@
 					"%%spark\n",
 					"val df = spark.read.synapsesql(\"asadedicated.asacourse.customers\") \n",
 					"// df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")\n",
-					"display(df)\n",
+					"// display(df)\n",
 					"df.registerTempTable('pyspark_customers')"
 				],
 				"execution_count": 3
@@ -77,7 +77,8 @@
 					"collapsed": true
 				},
 				"source": [
-					"df = spark.sql('SELECT * FROM ') "
+					"df = spark.sql('SELECT * FROM pyspark_customers') \r\n",
+					"display(df)"
 				],
 				"execution_count": 2
 			}
