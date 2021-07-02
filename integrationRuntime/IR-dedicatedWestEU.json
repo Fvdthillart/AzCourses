@@ -1,0 +1,17 @@
+{
+	"name": "IR-dedicatedWestEU",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "West Europe",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 0,
+					"cleanup": false
+				}
+			}
+		}
+	}
+}
