@@ -1,0 +1,60 @@
+{
+	"name": "acces_spark_database",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "asaSpark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "python"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/1fb20658-4607-4052-a198-e277fe0ebf24/resourceGroups/Frank-Azure-Analytics/providers/Microsoft.Synapse/workspaces/asaws-frank/bigDataPools/asaSpark",
+				"name": "asaSpark",
+				"type": "Spark",
+				"endpoint": "https://asaws-frank.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/asaSpark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\n",
+					"df = spark.sql(\"SELECT * FROM nyctlctutorial.nyctaxi\")\n",
+					"# df.show(10)"
+				],
+				"execution_count": null
+			}
+		]
+	}
+}
