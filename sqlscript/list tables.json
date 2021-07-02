@@ -2,7 +2,7 @@
 	"name": "list tables",
 	"properties": {
 		"content": {
-			"query": "select * \nfrom sys.tables\n\n",
+			"query": "select * \nfrom sys.tables\nGO\n\nselect *\nfrom sys.schemas",
 			"metadata": {
 				"language": "sql"
 			},
