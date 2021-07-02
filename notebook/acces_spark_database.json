@@ -48,10 +48,15 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\n",
 					"df = spark.sql(\"SELECT * FROM nyctlctutorial.nyctaxi\")\n",
-					"# df.show(10)"
+					"display(df)"
 				],
 				"execution_count": null
 			}
