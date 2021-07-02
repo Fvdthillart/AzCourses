@@ -26,7 +26,7 @@
 				"display_name": "Synapse Spark"
 			},
 			"language_info": {
-				"name": "scala"
+				"name": "python"
 			},
 			"a365ComputeOptions": {
 				"id": "/subscriptions/1fb20658-4607-4052-a198-e277fe0ebf24/resourceGroups/Frank-Azure-Analytics/providers/Microsoft.Synapse/workspaces/asaws-frank/bigDataPools/asaSpark",
@@ -55,10 +55,31 @@
 				},
 				"source": [
 					"%%spark\n",
-					"val df = spark.read.sqlanalytics(\"asadedicated.asacourse.customers\") \n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")"
+					"val df = spark.read.synapsesql(\"asadedicated.asacourse.customers\") \n",
+					"// df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")\n",
+					"display(df)\n",
+					"df.registerTempTable('pyspark_customers')"
 				],
-				"execution_count": 1
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"df = spark.sql('SELECT * FROM ') "
+				],
+				"execution_count": 2
 			}
 		]
 	}
