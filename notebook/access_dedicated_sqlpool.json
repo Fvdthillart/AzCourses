@@ -1,6 +1,7 @@
 {
 	"name": "access_dedicated_sqlpool",
 	"properties": {
+		"description": "you have to define a spark temporary table in scala for pyspark to access it",
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
@@ -58,9 +59,9 @@
 					"val df = spark.read.synapsesql(\"asadedicated.asacourse.customers\") \n",
 					"// df.write.mode(\"overwrite\").saveAsTable(\"default.t1\")\n",
 					"// display(df)\n",
-					"df.registerTempTable('pyspark_customers')"
+					"df.registerTempTable(\"pyspark_customers\")"
 				],
-				"execution_count": 3
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
@@ -74,13 +75,13 @@
 							"deleting": false
 						}
 					},
-					"collapsed": true
+					"collapsed": false
 				},
 				"source": [
 					"df = spark.sql('SELECT * FROM pyspark_customers') \r\n",
 					"display(df)"
 				],
-				"execution_count": 2
+				"execution_count": 6
 			}
 		]
 	}
