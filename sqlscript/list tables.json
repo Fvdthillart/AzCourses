@@ -1,0 +1,17 @@
+{
+	"name": "list tables",
+	"properties": {
+		"content": {
+			"query": "select * \nfrom sys.tables\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "Built-in",
+				"databaseName": "asa-serverless"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
