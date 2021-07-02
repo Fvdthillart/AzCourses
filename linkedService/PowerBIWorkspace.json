@@ -1,0 +1,11 @@
+{
+	"name": "PowerBIWorkspace",
+	"properties": {
+		"annotations": [],
+		"type": "PowerBIWorkspace",
+		"typeProperties": {
+			"workspaceID": "asaws-frank",
+			"tenantID": "9343ba9d-cc34-40f0-a6d4-acc8707ef71d"
+		}
+	}
+}
